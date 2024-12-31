@@ -1,5 +1,6 @@
 import React from "react";
 import CheckItem from "./check-item";
+import HR from "./hr";
 
 const Card = ({
   pageList = [],
@@ -16,9 +17,7 @@ const Card = ({
           handleCheckbox={handleSelectAll}
         />
       </div>
-      <div className="py-[10px] mx-[15px]">
-        <hr className="border-[#CDCDCD]" />
-      </div>
+      <HR />
       <div className="h-[164px] overflow-y-auto pl-[22px] pr-[15px]">
         {pageList.map((page) => (
           <CheckItem
@@ -29,11 +28,9 @@ const Card = ({
           />
         ))}
       </div>
-      <div className="py-[10px] mx-[15px]">
-        <hr className="border-[#CDCDCD]" />
-      </div>
+      <HR />
       <div className="mx-[15px] my-[10px]">
-        <button className="bg-[#FFCE22] hover:bg-[#FFD84D] w-full py-[10px] rounded">
+        <button className="bg-[#FFCE22] hover:bg-[#FFD84D] w-full py-[10px] rounded-[4px]">
           Done
         </button>
       </div>
