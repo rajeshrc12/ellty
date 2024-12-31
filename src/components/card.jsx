@@ -1,6 +1,7 @@
 import React from "react";
 import CheckItem from "./check-item";
 import HR from "./hr";
+import Button from "./button";
 
 const Card = ({
   pageList = [],
@@ -8,6 +9,14 @@ const Card = ({
   handleSelectAll = () => {},
   handleCheckbox = () => {},
 }) => {
+  const showPageList = () => {
+    let table = "Label     |   Checked\n";
+    table += "-------------------\n"; // Header separator
+    pageList.forEach((row) => {
+      table += `${row.label.padEnd(9)}|   ${row.checked}\n`;
+    });
+    alert(table);
+  };
   return (
     <div className="flex py-[10px] flex-col justify-between shadow-secondary h-[326px] w-[370px] border-[1px] border-[#EEEEEE] rounded-[6px]">
       <div className="pl-[22px] pr-[17px]">
@@ -30,9 +39,7 @@ const Card = ({
       </div>
       <HR />
       <div className="mx-[15px] my-[10px]">
-        <button className="bg-[#FFCE22] hover:bg-[#FFD84D] w-full py-[10px] rounded-[4px]">
-          Done
-        </button>
+        <Button onClick={showPageList}>Done</Button>
       </div>
     </div>
   );
